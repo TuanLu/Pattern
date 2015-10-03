@@ -146,22 +146,27 @@ jQuery(function ($) {
         }
     });
     $("#clone_canvas").click(function() {
-        var designJson = JSON.stringify(canvas.toJSON());
+        var designJson = JSON.stringify(canvas.toJSON(['selectable', 'object_type']));
+        //Method 1
         var newCanvas = new fabric.Canvas();
         newCanvas.setWidth(canvas.width);
         newCanvas.setHeight(canvas.height);
         newCanvas.loadFromJSON(designJson, function() {
-            
             canvasExport.loadFromJSON(designJson, canvasExport.renderAll.bind(canvasExport),function(o, object) {
                 // `o` = json object
                 // `object` = fabric.Object instance
             });
             imageExport.attr("src", newCanvas.toDataURL());
         });
-        /*canvasExport.loadFromJSON(designJson, canvasExport.renderAll.bind(canvasExport),function(o, object) {
+        //Method 2
+        /*canvasExport.loadFromJSON(designJson, function() {
+            setTimeout(function() {
+                canvasExport.renderAll();
+                imageExport.attr("src", canvasExport.toDataURL());
+            }, 500);
+        },function(o, object) {
             // `o` = json object
             // `object` = fabric.Object instance
-        });
-        imageExport.attr("src", canvasExport.toDataURL());*/
+        });*/
     });
 });
