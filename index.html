@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Fabric Pattern Test</title>
+        <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+    </head>
+    <body>
+        <canvas id="canvas" width="400px" height="300px"></canvas>
+        <canvas id="canvas_export" width="400px" height="300px"></canvas>
+        <ul class="controls">
+            <li>
+                <button type="button" id="change_color">Toggle Color</button>
+            </li>
+            <li>
+                <button type="button" id="change_pattern">Toggle Pattern</button>
+            </li>
+            <li>
+                <button type="button" id="move_forward">Forward</button>
+            </li>
+            <li>
+                <button type="button" id="move_backward">Backward</button>
+            </li>
+            <li>
+                <button type="button" id="clone_canvas">Clone Canvas</button>
+            </li>
+        </ul>
+        <img id="img_result"/>
+    </body>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/fabric.js"></script>
+    <script src="js/app.js"></script>
+</html>

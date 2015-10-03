@@ -1,0 +1,22 @@
+canvas {
+    border: 1px solid #ccc;
+}
+canvas #canvas_export {
+    border: 1px dotted #006699;
+}
+.canvas-container, ul.controls {
+    float: left;
+    margin: 10px;
+}
+@font-face {
+    font-family: gooddog;
+    src: url("../fonts/gooddog.otf");
+}
+@font-face {
+    font-family: playball;
+    src: url("../fonts/playball.ttf");
+}
+@font-face {
+    font-family: lokicola;
+    src: url("../fonts/lokicola.ttf");
+}
